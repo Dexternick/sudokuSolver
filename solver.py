@@ -9,19 +9,29 @@ puzzle = [
         [0, 0, 0, 4, 1, 9, 0, 0, 5],
         [0, 0, 0, 0, 8, 0, 0, 7, 9]]
 
+
 def row_checker(sudoku, rowNumber, toInsert):
-    return False
+    for i in range(9):
+        if sudoku[rowNumber][i] == toInsert:
+            return False
+    return True
+
 
 def column_checker(sudoku, columnNumber, toInsert):
-    return False
+    for i in range(9):
+        if sudoku[i][columnNumber] == toInsert:
+            return False
+    return True
 
-def box_checker(sudoku, boxNumber, toInsert):
-    return False
 
-def sudoku_solver(sudoku, N):
-    if N is 0:
-        return True
-    for i in range(1, N+1):
-        for j in range(1, N+1):
-            if
+def box_checker(sudoku, boxRow, boxColumn, toInsert):
+    for i in range(3):
+        for j in range(3):
+            if sudoku[boxRow+i][boxColumn+j] == toInsert:
+                return False
+            print(sudoku[boxRow+i][boxColumn+j])
+    print("ok")
+    return True
+
+#def sudoku_solver(sudoku, row, column):
 
